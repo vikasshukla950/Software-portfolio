@@ -1,0 +1,233 @@
+/* RESET */
+/* ===== DARK MODE (DEFAULT) ===== */
+
+html, body {
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+:root {
+  --bg-main: #0b0616;
+  --text-main: #ffffff;
+  /* --card-bg: rgba(255,255,255,0.08); */
+   --card-bg: rgba(255,255,255,0.08);
+  --border-soft: rgba(255,255,255,0.15);
+  --accent: #b983ff;
+}
+
+/* ===== LIGHT MODE ===== */
+body.light {
+  --bg-main: #f5f5ff;
+  --text-main: #111111;
+  --card-bg: rgba(0,0,0,0.06);
+  --border-soft: rgba(0,0,0,0.12);
+  --accent: #6a5cff;
+}
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  transition: 0.4s ease;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body.dark {
+    background: linear-gradient(135deg, black, black);
+    width: 100vw;
+    min-height: 100vh;      /* allow page to grow */
+    font-family: 'Segoe UI', sans-serif;    /* ENABLE SCROLL */
+    overflow-x: hidden;     /* prevent sideways scroll */
+}
+/* CONTACT PAGE */
+/* CONTACT ELITE */
+
+#cv-btn {
+    margin-top: 20px;
+    padding: 14px 34px;
+    font-size: 18px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Hidden logic */
+.hidden {
+    display: none;
+}
+
+.name-link {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.name-link:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 25px rgba(255, 120, 140, 0.8);
+}
+
+
+/* ================= GRAPHIC DESIGN SHOWCASE ================= */
+.design-showcase {
+  padding: 140px 6%;
+  background: radial-gradient(circle at top, #14001f, #000);
+  text-align: center;
+}
+
+.design-header span {
+  font-size: 12px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  color: #a855f7;
+}
+
+.design-header h1 {
+  margin-top: 14px;
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 900;
+  background: linear-gradient(90deg, #a855f7, #e9d5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.design-header p {
+  margin-top: 18px;
+  max-width: 700px;
+  margin-inline: auto;
+  font-size: 18px;
+  color: #c7d2fe;
+  line-height: 1.7;
+}
+
+/* CAROUSEL */
+.design-carousel {
+  margin-top: 80px;
+  position: relative;
+  max-width: 1100px;
+  margin-inline: auto;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 40px;
+  transition: transform 0.5s ease;
+}
+
+.carousel-track img {
+  width: 320px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 22px;
+  border: 1px solid rgba(168,85,247,0.35);
+  box-shadow: 0 0 60px rgba(168,85,247,0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.carousel-track img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 100px rgba(168,85,247,0.6);
+}
+
+/* BUTTONS */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: #000;
+  border: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(168,85,247,0.7);
+  transition: transform 0.3s ease;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  transform: translateY(-50%) scale(1.15);
+}
+
+.carousel-btn.left { left: -20px; }
+.carousel-btn.right { right: -20px; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .carousel-track img {
+    width: 260px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-btn {
+    display: none;
+  }
+
+  .carousel-track {
+    gap: 20px;
+  }
+}
+.home-Design-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 36px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #f5f3ff;
+  text-decoration: none;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #a855f7, #7c3aed);
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.6);
+  transition: all 0.35s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

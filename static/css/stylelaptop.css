@@ -1,0 +1,630 @@
+/* ================= LAPTOP FRAMEWORK (ELITE ASUS VIVOBOOK DESIGN) ================= */
+
+:root {
+    --laptop-silver: #d1d5db;
+    --laptop-dark-silver: #9ca3af;
+    --laptop-screen-bezel: #050505;
+    --laptop-shadow: rgba(0, 0, 0, 0.4);
+    --laptop-accent: #a855f7;
+}
+
+/* Light Mode Laptop Styles */
+[data-theme="light"] {
+    --laptop-silver: #f8fafc;
+    --laptop-dark-silver: #cbd5e1;
+    --laptop-screen-bezel: #0f172a;
+    --laptop-shadow: rgba(0, 0, 0, 0.15);
+    --laptop-accent: #4f46e5;
+}
+
+.laptop-wrapper {
+    width: 100%;
+    min-height: 85vh;
+    /* Reduced to fit viewport more gracefully */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: radial-gradient(circle at center, rgba(168, 85, 247, 0.10) 0%, transparent 60%);
+    perspective: 2500px;
+    overflow: visible;
+    position: relative;
+    margin-top: 20px;
+}
+
+.laptop-system {
+    width: clamp(320px, 80vw, 980px);
+    /* Narrowed max-width for clear visibility */
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: rotateX(5deg) scale(0.95) translateY(0px);
+    /* Straighter and slightly scaled to fit beautifully */
+}
+
+/* --- LAPTOP LID (SCREEN) --- */
+.laptop-lid {
+    width: 100%;
+    aspect-ratio: 16 / 10.5;
+    background: var(--laptop-screen-bezel);
+    border-radius: 12px 12px 0 0;
+    position: relative;
+    border: none !important;
+    /* Removed silver outline border */
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
+    transform-origin: bottom;
+    transform: rotateX(0deg);
+    transition: transform 1s ease;
+    overflow: hidden;
+    z-index: 10;
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(168, 85, 247, 0.1);
+}
+
+/* Elite Screen Glare */
+.laptop-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at var(--glare-x, 30%) var(--glare-y, 30%),
+            rgba(255, 255, 255, 0.12) 0%,
+            rgba(255, 255, 255, 0) 60%);
+    pointer-events: none;
+    z-index: 1;
+    /* Lowered from 100 to prevent blurring text */
+    transition: all 0.1s ease;
+}
+
+/* Webcam */
+.laptop-lid::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: #111;
+    border-radius: 50%;
+    box-shadow: inset 0 0 2px #333;
+    z-index: 20;
+}
+
+/* The Screen Content Area - Simple Solid Black */
+.laptop-screen {
+    width: calc(100% - 16px);
+    height: calc(100% - 32px);
+    margin: 16px 8px;
+    background: #000000 !important;
+    border-radius: 4px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 1);
+}
+
+[data-theme="light"] .laptop-screen {
+    background: #ffffff !important;
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.05);
+    /* Soft inner shadow for the screen */
+}
+
+/* No Wallpaper / Grid Overlay as requested */
+.laptop-screen::after {
+    display: none !important;
+}
+
+/* Removed Terminal Status as requested for simplicity */
+.laptop-screen::before {
+    display: none !important;
+}
+
+/* Custom Scrollbar for Laptop Screen */
+.laptop-screen::-webkit-scrollbar {
+    width: 6px;
+}
+
+.laptop-screen::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+/* --- LAPTOP BASE --- */
+.laptop-base {
+    width: 102%;
+    height: 12px;
+    background: var(--laptop-silver);
+    border-radius: 0 0 12px 12px;
+    position: relative;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    transform-style: preserve-3d;
+    margin-top: -2px;
+    /* Pull lid and base closer */
+}
+
+.laptop-keyboard-bridge {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(to bottom,
+            #e5e7eb 0%,
+            #d1d5db 20%,
+            #9ca3af 100%);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    transform-origin: top;
+    transform: rotateX(65deg);
+    border-radius: 0 0 30px 30px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    align-items: center;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background 0.4s ease;
+}
+
+[data-theme="light"] .laptop-keyboard-bridge {
+    background: linear-gradient(to bottom,
+            #ffffff 0%,
+            #e2e8f0 30%,
+            #cbd5e1 100%);
+}
+
+/* Reflection on the Screen */
+.laptop-lid::after {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 50%, rgba(255, 255, 255, 0.02) 100%);
+    pointer-events: none;
+    z-index: 15;
+    border-radius: 4px;
+}
+
+.keyboard-mockup {
+    width: 95%;
+    height: 180px;
+    background: #0f172a;
+    margin-top: 15px;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 6px;
+    padding: 12px;
+    box-shadow:
+        inset 0 0 40px rgba(0, 0, 0, 0.9),
+        0 1px 0 rgba(255, 255, 255, 0.1),
+        0 0 20px rgba(168, 85, 247, 0.15);
+    /* Soft purple backlight */
+    border: none !important;
+}
+
+.key {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    box-shadow:
+        0 3px 0 #020617,
+        0 0 5px rgba(168, 85, 247, 0.2);
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: inherit;
+    user-select: none;
+    cursor: pointer;
+}
+
+.key:hover {
+    background: #334155;
+    box-shadow:
+        0 5px 0 #020617,
+        0 0 15px rgba(0, 210, 255, 0.4);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Custom styles for buttons inside the laptop screen */
+.laptop-screen .btn-main {
+    padding: 10px 24px;
+    font-size: 13px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+    border: none;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.31, 1.275);
+    width: fit-content;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 8px;
+}
+
+.laptop-screen .btn-main:hover {
+    background: linear-gradient(135deg, #3a7bd5 0%, #00d2ff 100%);
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 210, 255, 0.6);
+    filter: brightness(1.2);
+}
+
+.trackpad-mockup {
+    width: 35%;
+    height: 90px;
+    background: rgba(0, 0, 0, 0.08);
+    margin-top: 25px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow:
+        inset 0 4px 8px rgba(0, 0, 0, 0.1),
+        0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* --- PREMIUM GREETING TEXT (h1 wrapper) --- */
+.certified-text {
+    position: relative !important;
+    display: block !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+    font-weight: 900 !important;
+    font-style: normal !important;
+    font-size: clamp(2.2rem, 6.5vw, 3.8rem) !important;
+    letter-spacing: -1px !important;
+    line-height: 1.1 !important;
+    margin-bottom: 25px !important;
+    z-index: 150 !important;
+    /* Reset all competing gradient/clip rules from .greeting */
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: unset !important;
+    color: #ffffff !important;
+    filter: none !important;
+}
+
+/* The ACTUAL typed text inside the span — gradient lives here */
+#typed-text {
+    display: inline-block !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+    font-style: normal !important;
+    font-weight: 900 !important;
+
+    /* Fallback color so text is ALWAYS readable */
+    color: #a855f7 !important;
+
+    /* Dark mode: hot pink → purple → indigo → cyan shimmer */
+    background: linear-gradient(110deg,
+            #f0abfc 0%,
+            #e879f9 15%,
+            #a855f7 35%,
+            #818cf8 55%,
+            #22d3ee 75%,
+            #a855f7 100%) !important;
+    background-size: 250% auto !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+
+    /* Purple-cyan glow */
+    filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.7)) drop-shadow(0 0 10px rgba(34, 211, 238, 0.45)) !important;
+
+    /* Shimmer sweep */
+    animation: shimmer-text 4s linear infinite !important;
+}
+
+/* Light Mode typed text: deeper violet → purple → indigo → teal */
+[data-theme="light"] #typed-text {
+    color: #7c3aed !important;
+    /* visible purple fallback for light mode */
+    background: linear-gradient(110deg,
+            #7c3aed 0%,
+            #a855f7 25%,
+            #6366f1 55%,
+            #0891b2 85%,
+            #a855f7 100%) !important;
+    background-size: 250% auto !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    filter: drop-shadow(0 0 14px rgba(124, 58, 237, 0.5)) drop-shadow(0 0 6px rgba(8, 145, 178, 0.35)) !important;
+    animation: shimmer-text 4s linear infinite !important;
+}
+
+/* Shimmer sweep keyframe */
+@keyframes shimmer-text {
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 250% center;
+    }
+}
+
+
+
+@keyframes shine-text {
+    to {
+        background-position: 200% center;
+    }
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes shine-text {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.certified-text span {
+    display: inline-block;
+    animation: slideUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* --- TRADITIONAL MOBILE HERO (LAPTOP REMOVED) --- */
+/* Standard Laptops (1280px - 1440px) */
+@media (max-width: 1280px) {
+    .laptop-system {
+        transform: scale(0.85) rotateX(4deg);
+        /* Prevents clipping on standard laptops */
+    }
+}
+
+/* Small Laptops & iPads */
+@media (max-width: 1024px) {
+    .laptop-system {
+        transform: scale(0.75) rotateX(4deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .laptop-wrapper {
+        perspective: none !important;
+        min-height: auto !important;
+        padding: 50px 20px !important;
+        background: none !important;
+        /* Remove laptop glow */
+        margin: 0 !important;
+    }
+
+    /* Aggressively Strip Laptop UI on Mobile */
+    .laptop-system,
+    .laptop-lid,
+    .laptop-screen,
+    [data-theme="light"] .laptop-lid,
+    [data-theme="light"] .laptop-screen,
+    [data-theme="dark"] .laptop-lid,
+    [data-theme="dark"] .laptop-screen {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        background: transparent !important;
+        background-color: transparent !important;
+        background-image: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        transform: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+    }
+
+    /* Clear all pseudo-elements and glares */
+    .laptop-lid::after,
+    .laptop-lid::before,
+    .laptop-screen::after,
+    .laptop-screen::before {
+        display: none !important;
+        content: none !important;
+    }
+
+    .hero-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 20px !important;
+        /* Tighter gap for better fit */
+        width: 100% !important;
+        padding: 20px 0 !important;
+        background: transparent !important;
+    }
+
+    .hero-left {
+        order: 2;
+        width: 100% !important;
+        padding: 0 10px !important;
+    }
+
+    .hero-right {
+        order: 1;
+        /* Image at the top */
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* Mobile heading wrapper — reset gradient to none, just sizing */
+    .certified-text {
+        font-size: clamp(2.2rem, 11vw, 3.2rem) !important;
+        font-style: italic !important;
+        font-weight: 900 !important;
+        letter-spacing: -1px !important;
+        margin-bottom: 15px !important;
+        background: none !important;
+        -webkit-background-clip: unset !important;
+        background-clip: unset !important;
+        -webkit-text-fill-color: unset !important;
+        color: transparent !important;
+        filter: none !important;
+    }
+
+    /* Mobile: gradient on the actual typed span */
+    #typed-text {
+        font-size: inherit !important;
+        font-style: italic !important;
+        font-weight: 900 !important;
+        background: linear-gradient(110deg,
+                #f0abfc 0%,
+                #e879f9 15%,
+                #a855f7 35%,
+                #818cf8 55%,
+                #22d3ee 75%,
+                #a855f7 100%) !important;
+        background-size: 250% auto !important;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        filter: drop-shadow(0 0 14px rgba(168, 85, 247, 0.6)) !important;
+        animation: shimmer-text 4s linear infinite !important;
+    }
+
+    #role {
+        font-size: 1rem !important;
+        color: var(--primary) !important;
+        margin-bottom: 30px !important;
+        display: block !important;
+        font-weight: 700 !important;
+        opacity: 0.9;
+    }
+
+    /* Side-by-Side Buttons on Mobile */
+    .hero-buttons {
+        flex-direction: row !important;
+        /* Force Single Line */
+        justify-content: center !important;
+        display: flex !important;
+        width: 100% !important;
+        gap: 8px !important;
+    }
+
+    .hero-buttons .btn-main {
+        flex: 1 !important;
+        padding: 12px 5px !important;
+        font-size: 11px !important;
+        /* Adjusted to fit single line */
+        margin: 0 !important;
+        min-width: 120px !important;
+        white-space: nowrap !important;
+        border-radius: 8px !important;
+    }
+
+    /* Fixed Image Layout */
+    .image-card-elite {
+        width: clamp(220px, 60vw, 260px) !important;
+        height: auto !important;
+        aspect-ratio: 3/4 !important;
+        margin: 0 auto !important;
+        animation: floating 5s ease-in-out infinite !important;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2) !important;
+        border-radius: 15px !important;
+    }
+
+    /* Side-by-Side Single Line Buttons */
+    .hero-buttons {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        /* Forces single line */
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        gap: 8px !important;
+        padding: 0 10px !important;
+    }
+
+    .hero-buttons .btn-main {
+        flex: 1 !important;
+        padding: 10px 4px !important;
+        font-size: clamp(9px, 2.5vw, 11px) !important;
+        letter-spacing: 0.5px !important;
+        min-width: 0 !important;
+        /* Allow shrinking to fit */
+        white-space: nowrap !important;
+    }
+
+    /* Hide Desktop-Only Laptop Elements on Mobile */
+    .laptop-base,
+    .laptop-keyboard-bridge,
+    .laptop-lid::before,
+    .laptop-lid::after,
+    .laptop-screen::after,
+    .scroll-indicator,
+    .status-bar-elite {
+        display: none !important;
+    }
+}
+
+/* Ensure the hero section itself is clean on mobile */
+@media (max-width: 768px) {
+    .hero-section {
+        background: var(--bg) !important;
+        /* Use solid theme background */
+        padding: 40px 10px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .laptop-wrapper {
+        padding-top: 60px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    /* Ensure name is clear on very small screens */
+    .certified-text {
+        font-size: 1.8rem !important;
+        font-style: italic !important;
+        letter-spacing: -0.5px !important;
+    }
+}
+
+/* Zoom Effect when in focus */
+.laptop-system.in-focus {
+    transform: translateZ(200px);
+}

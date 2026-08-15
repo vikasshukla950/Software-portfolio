@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Piyush Tiwari</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/css/styleindex.css">
+
+
+</head>
+
+<body class="dark">
+  <!-- COMMON NAVBAR -->
+
+
+  <div id="stage">
+
+    <div id="agent-container">
+
+      <div id="speech">
+        <h3>Click the box to open Piyush's Portfolio</h3>
+      </div>
+
+      <img src="static/images/agent.png" id="agent">
+      <div id="box-wrapper" onclick="goHome()">
+        <img src="static/images/box.png" id="portfolio-box">
+        <div class="portal-light"></div>
+        <audio id="portal-sound" preload="auto">
+          <source src="static/sounds/hover.mp3" type="audio/mpeg">
+        </audio>
+
+      </div>
+
+
+    </div>
+
+
+    <!-- <img src="{{ url_for('static', filename='images/box.png') }}"
+                 id="portfolio-box"
+                 onclick="goHome()"> -->
+
+  </div>
+
+  </div>
+
+  <script src="static/js/agent.js"></script>
+
+  <!-- <footer class="site-footer">
+  <div class="footer-inner">
+
+    <nav class="footer-nav">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/skills">Skills</a>
+      <a href="/projects">Projects</a>
+      <a href="/contact">Contact</a>
+    </nav>
+
+    <div class="footer-line"></div>
+
+    <p class="footer-copy">
+      © 2026 <span>Piyush Tiwari</span>. All Rights Reserved.
+    </p>
+
+    <p class="footer-tech">
+      Made with <span class="heart">❤</span> using <b>Frontend</b> & <b>Python</b>
+    </p>
+
+  </div>
+</footer> -->
+  <div id="dimension-fade"></div>
+
+</body>
+<script src="static/js/sound-system.js"></script>
+
+</html>

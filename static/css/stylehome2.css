@@ -1,0 +1,1126 @@
+/* ================= MODULAR IMPORTS ================= */
+@import url('navbar-advanced.css');
+@import url('styleabout.css');
+@import url('styleskills.css');
+@import url('styleprojects.css');
+@import url('stylecontact.css');
+@import url('stylecert.css');
+
+/* ================= ROOT & THEME VARIABLES ================= */
+:root {
+  /* Dark Mode (Default) */
+  --primary: #a855f7;
+  --accent: #22d3ee;
+  --bg: #05010d;
+  --text: #ffffff;
+  --text-muted: #d1d5db;
+  --parchment: #f1f5f9;
+  --glass: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.12);
+  --nav-bg: rgba(11, 6, 22, 0.9);
+  --footer-bg: linear-gradient(180deg, #0b0616, #05010c);
+  --card-bg: rgba(20, 10, 35, 0.6);
+  --section-bg-alt: #0b0616;
+  --grad-start: #14001f;
+  --grad-end: #05010d;
+
+  /* Book Specific Variables */
+  --book-bg: #fdfaf2;
+  --book-text-title: #0f172a;
+  --book-text-body: #475569;
+}
+
+[data-theme="light"] {
+  /* Light Mode */
+  --primary: #7c3aed;
+  --accent: #0284c7;
+  --bg: #ffffff;
+  --text: #000000;
+  --text-muted: #374151;
+  --parchment: #ffffff;
+  --glass: rgba(255, 255, 255, 0.9);
+  --border: rgba(0, 0, 0, 0.15);
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --footer-bg: #f8fafc;
+  --card-bg: #ffffff;
+  --section-bg-alt: #f1f5f9;
+  --grad-start: #f1f5f9;
+  --grad-end: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+  /* Adjusted for navbar height */
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ================= MAIN LAYOUT ================= */
+.home-main {
+  width: 100%;
+  overflow: hidden;
+  /* Prevent horizontal overflow */
+}
+
+/* ================= THEME TOGGLE BUTTON ================= */
+/* Navbar layout is handled by navbar-advanced.css */
+/* We only keep the specific theme button styles to ensure it looks good */
+
+.theme-btn {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+.theme-btn:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: rotate(15deg);
+  box-shadow: 0 0 15px var(--primary);
+}
+
+.theme-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Icon Logic */
+.sun-icon {
+  display: block;
+}
+
+.moon-icon {
+  display: none;
+}
+
+[data-theme="light"] .sun-icon {
+  display: none;
+}
+
+[data-theme="light"] .moon-icon {
+  display: block;
+}
+
+/* ================= HERO SECTION ================= */
+.hero-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, var(--grad-start), var(--grad-end));
+  padding: 100px 5% 60px;
+  /* Added top padding */
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-grid {
+  width: 100%;
+  max-width: 1400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Responsive Hero Fix */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+    padding-top: 20px;
+  }
+
+  .hero-left {
+    order: 2;
+    /* Keep text below image if desired, or remove to keep text top. Let's keep default order (Text Top) */
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-right {
+    margin: 0 auto;
+    max-width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .hero-right img {
+    max-height: 400px;
+  }
+
+  .greeting {
+    font-size: clamp(32px, 8vw, 50px);
+    /* Adjusted for mobile */
+  }
+}
+
+.greeting {
+  font-size: clamp(32px, 5vw, 70px);
+  font-weight: 800;
+  line-height: 1.1;
+  background: linear-gradient(90deg, var(--text), var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+#role {
+  font-size: clamp(18px, 2vw, 24px);
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+
+.btn-main {
+  padding: clamp(14px, 2vw, 18px) clamp(28px, 4vw, 42px);
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  font-size: clamp(16px, 2.5vw, 20px);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  letter-spacing: 0.5px;
+}
+
+.btn-main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+}
+
+.btn-main:hover::before {
+  opacity: 1;
+}
+
+.btn-main:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(34, 211, 238, 0.5);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .hero-buttons {
+    display: flex;
+    flex-direction: row;
+    /* Force single line */
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .btn-main {
+    flex: 1;
+    /* Equal space */
+    width: auto;
+    text-align: center;
+    padding: 14px 8px;
+    /* Balanced padding */
+    font-size: clamp(13px, 3.8vw, 16px);
+    /* Auto-scale text */
+    white-space: nowrap;
+    /* Single line text */
+    border-radius: 12px;
+    /* Smooth corners */
+    box-shadow: 0 4px 10px rgba(124, 58, 237, 0.2);
+    letter-spacing: 0.3px;
+  }
+}
+
+.btn-sec {
+  padding: 16px 40px;
+  border: 2px solid var(--primary);
+  border-radius: 50px;
+  background: transparent;
+  color: var(--text);
+  font-size: 19px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.4s;
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.1);
+}
+
+.btn-sec:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-5px);
+  box-shadow: 0 0 35px rgba(124, 58, 237, 0.4);
+}
+
+/* =====================================================
+   PREMIUM HERO WITH REALISTIC LAPTOP – FULL CSS
+===================================================== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* ================= HERO SECTION ================= */
+
+.hero-section{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 20% 20%, #1f2b3a, #050a14 40%),
+    linear-gradient(135deg,#020617,#07112b);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  position:relative;
+}
+
+/* Ambient glow */
+.hero-section::before{
+  content:"";
+  position:absolute;
+  width:600px;
+  height:600px;
+  background:radial-gradient(circle,#00f5ff44,transparent 70%);
+  top:-200px;
+  left:-200px;
+  filter:blur(120px);
+}
+
+.hero-container{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* ================= LAPTOP ================= */
+
+.laptop-wrapper{
+  width:900px;
+  max-width:95%;
+  position:relative;
+  animation:floatLaptop 6s ease-in-out infinite;
+}
+
+@keyframes floatLaptop{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-18px);}
+  100%{transform:translateY(0);}
+}
+
+.laptop-img{
+  width:100%;
+  height:auto;
+  display:block;
+  filter:drop-shadow(0 45px 70px rgba(0,0,0,0.7));
+}
+
+/* ================= SCREEN ================= */
+
+.laptop-screen{
+  position:absolute;
+  top:10%;
+  left:11%;
+  width:78%;
+  height:63%;
+  background:rgba(10,15,25,0.92);
+  border-radius:14px;
+  padding:40px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:16px;
+  color:#fff;
+  overflow:hidden;
+}
+
+/* Glass layer */
+.laptop-screen::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,#00f5ff,#7f00ff);
+  opacity:0.07;
+}
+
+/* ================= TEXT ================= */
+
+.screen-title{
+  font-size:2.4rem;
+  font-weight:700;
+  letter-spacing:0.5px;
+  position:relative;
+}
+
+.highlight{
+  color:#00f5ff;
+}
+
+.screen-role{
+  font-size:1.35rem;
+  color:#d1d5db;
+}
+
+/* ================= BUTTONS ================= */
+
+.screen-buttons{
+  display:flex;
+  gap:22px;
+  margin-top:10px;
+}
+
+.screen-buttons button{
+  padding:13px 34px;
+  border-radius:40px;
+  border:none;
+  background:linear-gradient(135deg,#00f5ff,#7f00ff);
+  color:#fff;
+  font-size:1rem;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.4s;
+}
+
+.screen-buttons button:hover{
+  transform:translateY(-4px) scale(1.03);
+  box-shadow:0 10px 30px rgba(0,245,255,0.5);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Large desktop */
+@media(max-width:1400px){
+  .laptop-wrapper{width:820px;}
+}
+
+/* Laptop */
+@media(max-width:1200px){
+  .laptop-wrapper{width:760px;}
+}
+
+/* Tablet */
+@media(max-width:992px){
+  .laptop-wrapper{width:680px;}
+
+  .laptop-screen{
+    padding:28px;
+  }
+
+  .screen-title{font-size:2rem;}
+  .screen-role{font-size:1.15rem;}
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .laptop-wrapper{width:95%;}
+
+  .laptop-screen{
+    top:12%;
+    left:9%;
+    width:82%;
+    height:60%;
+    padding:22px;
+  }
+
+  .screen-title{font-size:1.6rem;}
+  .screen-role{font-size:1rem;}
+
+  .screen-buttons{
+    flex-direction:column;
+  }
+
+  .screen-buttons button{
+    width:100%;
+  }
+}
+
+/* Small mobile */
+@media(max-width:480px){
+
+  .laptop-screen{
+    padding:18px;
+  }
+
+  .screen-title{font-size:1.3rem;}
+  .screen-role{font-size:0.9rem;}
+}
+
+/* Extra small */
+@media(max-width:360px){
+  .screen-title{font-size:1.1rem;}
+}
+
+/* ================= SAFETY ================= */
+
+.laptop-screen *{
+  max-width:100%;
+  word-break:break-word;
+}
+/* ================= SCROLL INDICATOR ================= */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  z-index: 20;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-indicator:hover {
+  opacity: 1;
+  transform: translateX(-50%) translateY(5px);
+}
+
+.mouse {
+  width: 26px;
+  height: 42px;
+  border: 2px solid var(--text-muted);
+  border-radius: 20px;
+  position: relative;
+}
+
+.wheel {
+  width: 4px;
+  height: 8px;
+  background: var(--primary);
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  animation: scrollWheel 2s infinite;
+}
+
+.arrow-scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -5px;
+}
+
+.arrow-scroll span {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid var(--text-muted);
+  border-right: 2px solid var(--text-muted);
+  transform: rotate(45deg);
+  animation: scrollArrow 2s infinite;
+  opacity: 0;
+  margin: -3px 0;
+}
+
+.arrow-scroll span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.arrow-scroll span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes scrollWheel {
+  0% {
+    top: 8px;
+    opacity: 1;
+  }
+
+  100% {
+    top: 24px;
+    opacity: 0;
+  }
+}
+
+@keyframes scrollArrow {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-5px, -5px);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+}
+
+/* ================= PORTFOLIO SECTION ================= */
+.portfolio-section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px 5%;
+  background: radial-gradient(circle at center, var(--grad-start), var(--grad-end));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-container {
+  width: 100%;
+  max-width: 1400px;
+  text-align: center;
+}
+
+.portfolio-title {
+  font-size: clamp(30px, 4vw, 55px);
+  font-weight: 800;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, var(--text), var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.portfolio-subtitle {
+  font-size: 18px;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+  opacity: 0.8;
+}
+
+/* ================= EXPLORE IMAGE SECTION ================= */
+.explore-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 15px;
+  background: var(--glass);
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.explore-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  line-height: 0;
+  transform: translateZ(0);
+}
+
+.explore-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hotspot {
+  position: absolute;
+  cursor: pointer;
+  background: rgba(34, 211, 238, 0.05);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  transition: all 0.4s ease;
+  z-index: 10;
+  border-radius: 10px;
+  animation: hotspotPulse 2s infinite ease-in-out;
+}
+
+@keyframes hotspotPulse {
+  0% {
+    box-shadow: 0 0 5px rgba(34, 211, 238, 0.1);
+    border-color: rgba(34, 211, 238, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.3);
+    border-color: rgba(34, 211, 238, 0.5);
+  }
+
+  100% {
+    box-shadow: 0 0 5px rgba(34, 211, 238, 0.1);
+    border-color: rgba(34, 211, 238, 0.2);
+  }
+}
+
+.hotspot:hover {
+  background: rgba(34, 211, 238, 0.15);
+  border-color: rgba(34, 211, 238, 0.8);
+  box-shadow: 0 0 40px rgba(34, 211, 238, 0.6) !important;
+  backdrop-filter: blur(2px);
+  transform: scale(1.02);
+  animation: none;
+}
+
+/* Specific Hotspot Positions */
+.hotspot-education {
+  top: 20%;
+  left: 7%;
+  width: 18%;
+  height: 7%;
+}
+
+.hotspot-projects {
+  top: 28%;
+  left: 44%;
+  width: 25%;
+  height: 25%;
+}
+
+.hotspot-skills {
+  top: 54%;
+  left: 4%;
+  width: 24%;
+  height: 35%;
+}
+
+.hotspot-resume {
+  top: 55%;
+  left: 29%;
+  width: 37%;
+  height: 33%;
+}
+
+.hotspot-contact {
+  top: 53%;
+  left: 81%;
+  width: 15%;
+  height: 32%;
+}
+
+@media (max-width: 600px) {
+  .explore-wrapper {
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 15px;
+  }
+}
+
+/* ================= EDUCATION SECTION (Book Style) ================= */
+
+.edu-world {
+  --gold: #d4af37;
+  /* Kept accent separate from global accent to ensure book visuals match design */
+  --book-accent: #8b5cf6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Always maintain Dark Background for the Education Room for contrast */
+  background: radial-gradient(circle at center, #12001f, #05000a);
+  perspective: 2800px;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  padding: 60px 20px;
+}
+
+/* ================= BOOK STAGE ================= */
+.book-stage {
+  width: clamp(320px, 85vw, 720px);
+  height: clamp(520px, 80vh, 820px);
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 1.2s cubic-bezier(.34, 1.56, .64, 1);
+}
+
+.book-stage.active {
+  transform: translateX(22%);
+  /* Shift right on large screens */
+}
+
+/* ================= BOOK ================= */
+.book {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+/* ================= COVER ================= */
+.cover {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1e1e2f, #0f0f1a);
+  border-radius: 6px 22px 22px 6px;
+  transform-origin: left;
+  transition: 1.2s;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid var(--gold);
+  cursor: pointer;
+  box-shadow: 25px 25px 60px rgba(0, 0, 0, .8);
+}
+
+.book-stage.active .cover {
+  transform: rotateY(-165deg);
+}
+
+.cover h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--gold);
+  letter-spacing: 3px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.cover h4 {
+  color: #aaa;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.hint {
+  margin-top: 20px;
+  color: #ccc;
+  font-size: .9rem;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+/* ================= PAGES ================= */
+.pages {
+  position: absolute;
+  inset: 6px;
+  background: var(--book-bg);
+  border-radius: 4px 20px 20px 4px;
+  overflow: hidden;
+  box-shadow: inset 18px 0 55px rgba(0, 0, 0, .35);
+}
+
+/* ================= STACK ================= */
+.page-stack {
+  position: absolute;
+  inset: 0;
+  perspective: 2500px;
+}
+
+.page {
+  position: absolute;
+  inset: 0;
+  padding: 55px 50px;
+  background: linear-gradient(#fffef9, #f4efe6);
+  transform-origin: left;
+  backface-visibility: hidden;
+  transition: 1.1s;
+  display: flex;
+  flex-direction: column;
+}
+
+.page:not(.active) {
+  transform: rotateY(180deg);
+}
+
+.page.active {
+  transform: rotateY(0);
+  z-index: 5;
+}
+
+.page.flipped {
+  transform: rotateY(-180deg);
+}
+
+/* ================= CARD IN BOOK ================= */
+.edu-card {
+  height: 100%;
+  /* Ensure card is always light to match the paper theme */
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 18px;
+  padding: 50px;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, .25);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.edu-icon {
+  font-size: 4.2rem;
+  color: var(--book-accent);
+  margin-bottom: 30px;
+  text-shadow: 0 0 25px rgba(139, 92, 246, 0.3);
+}
+
+.edu-card h3 {
+  color: var(--book-accent);
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.edu-card h2 {
+  font-size: clamp(1.6rem, 2vw, 2.2rem);
+  margin-bottom: 10px;
+  color: var(--book-text-title);
+  /* Dark text for light card */
+}
+
+.edu-card p,
+.edu-card h4 {
+  font-size: 1rem;
+  color: var(--book-text-body);
+  /* Dark text for light card */
+  line-height: 1.7;
+}
+
+.divider {
+  width: 70px;
+  height: 3px;
+  background: var(--book-accent);
+  margin: 25px auto;
+  border-radius: 10px;
+}
+
+/* ================= NAV (Inside Book) ================= */
+.page-nav {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 30px;
+  border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.page-nav button {
+  padding: 10px 18px;
+  border: none;
+  background: var(--book-accent);
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.page-nav button:hover {
+  background: #6d28d9;
+}
+
+/* ================= FOOTER ================= */
+.site-footer {
+  width: 100%;
+  background: var(--footer-bg);
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -10px 60px rgba(168, 85, 247, 0.15);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 6% 50px;
+  text-align: center;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: 0.3s;
+}
+
+.footer-nav a:hover {
+  color: var(--primary);
+}
+
+.footer-line {
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  margin: 20px auto;
+}
+
+.footer-copy {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.footer-copy span {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.heart {
+  color: #ff4d6d;
+  display: inline-block;
+  animation: heart 1.5s infinite;
+}
+
+@keyframes heart {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* ================= RESPONSIVE FIXES ================= */
+
+@media (max-width: 900px) {
+  .book-stage {
+    width: 90vw;
+    height: 650px;
+  }
+
+  .book-stage.active {
+    transform: translateX(0);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .book-stage {
+    width: 100vw;
+    height: 600px;
+    /* Fixed height container */
+    margin-top: 20px;
+  }
+
+  .book-stage.active {
+    transform: translateX(0) scale(1.0);
+    margin: 0 auto;
+  }
+
+  /* Force relative positioning for page content */
+  .page {
+    padding: 15px 15px 60px 15px;
+    /* Bottom padding for absolute buttons */
+    display: block;
+    /* Remove flex to allow absolute children freely */
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .edu-card {
+    display: block;
+    height: calc(100% - 10px);
+    /* Fill space leaving room */
+    overflow-y: auto;
+    /* Scroll text if needed */
+    padding: 15px;
+    margin-bottom: 0;
+  }
+
+  .edu-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+  }
+
+  .edu-card h2,
+  .edu-card h3,
+  .edu-card h4,
+  .edu-card p {
+    text-align: center;
+  }
+
+  .edu-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .edu-card p {
+    font-size: 0.9rem;
+  }
+
+  /* Force Buttons to Bottom */
+  .page-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8));
+    /* Fade bg */
+    padding: 15px 20px;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .page-nav button {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    background: var(--book-accent);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .cover h1 {
+    font-size: 1.8rem;
+  }
+}

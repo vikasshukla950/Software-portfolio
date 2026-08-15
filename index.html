@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Vikas Shukla | Neo-Brutalist Developer Portfolio</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <!-- Custom Neo-Brutalist Stylesheet -->
+  <link rel="stylesheet" href="static/css/style_naman.css">
+</head>
+
+<body>
+
+  <!-- ================= SECTION 1: NAVBAR ================= -->
+  <nav class="main-navbar">
+    <div class="nav-left">
+      <div class="nav-logo-box">V</div>
+      <span class="nav-logo-text">Vikas Shukla</span>
+    </div>
+
+    <!-- Mobile Nav Toggle -->
+    <button class="nav-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="nav-center" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#awards">Awards</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="nav-right">
+      <a href="https://github.com/vikasshukla950" target="_blank" class="nav-social-icon" aria-label="GitHub">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/vikas-shukla-b15992228" target="_blank" class="nav-social-icon" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="https://x.com/vikas_shukla07" target="_blank" class="nav-social-icon" aria-label="X (Twitter)">
+        <i class="fa-brands fa-x-twitter"></i>
+      </a>
+      <a href="https://www.codechef.com/users/vikas091" target="_blank" class="nav-social-icon" aria-label="CodeChef">
+        <i class="fa-solid fa-code"></i>
+      </a>
+      <div class="theme-select-container">
+        <i class="fa-solid fa-gear theme-settings-icon" aria-hidden="true"></i>
+        <select id="themeSelect" onchange="changeTheme(this.value)" class="theme-select-dropdown" aria-label="Select Theme Mode">
+          <option value="light">☀️ Light</option>
+          <option value="dark">🌙 Dark</option>
+        </select>
+      </div>
+      <a href="#contact" class="neo-btn">✉ Contact</a>
+    </div>
+  </nav>
+
+  <!-- ================= SECTION 2: HERO SECTION ================= -->
+  <header class="hero-section">
+    <div class="hero-left">
+      <div class="neo-badge yellow">
+        ● $ AVAILABLE_FOR: INTERNSHIPS AND FREELANCE
+      </div>
+      <h1 class="hero-name">
+        Vikas <span class="gradient-text">Shukla</span>
+      </h1>
+      <p class="hero-subtitle">
+        &gt; Software Developer · Full-Stack Developer · AWS Cloud Solutions Architecture · Problem Solver
+      </p>
+      <p class="hero-desc">
+        I'm a final-year B.Tech Computer Science student passionate about Software Development, Full-Stack Development, AWS Solutions Architecture, and Data Structures & Algorithms. I build scalable, user-focused applications with clean, efficient code.
+      </p>
+      
+      <div class="hero-actions">
+        <a href="#projects" class="neo-btn">🚀 View Projects</a>
+        <a href="https://drive.google.com/uc?export=download&id=1OrtqLlKYq6qP7BxSvKLZHG8vGYjhYtNX" download="Vikas_Shukla_CV.pdf" target="_blank" class="neo-btn">📄 Download CV ↗</a>
+        <a href="#contact" class="neo-btn">✉ Contact Me ↗</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-box yellow">
+          <div class="label">Education</div>
+          <div class="value">B.Tech CSE / ABESIT<br>· 2023-27</div>
+        </div>
+        <div class="stat-box cyan">
+          <div class="label">Projects</div>
+          <div class="value">3+ Real-World<br>Full-Stack & Cloud</div>
+        </div>
+        <div class="stat-box pink">
+          <div class="label">CodeChef</div>
+          <div class="value">Gold Badge<br>500+ Solved</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="terminal-card">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="traffic-dot dot-red"></span>
+            <span class="traffic-dot dot-yellow"></span>
+            <span class="traffic-dot dot-green"></span>
+          </div>
+          <div class="terminal-title">vikas.ts</div>
+          <div class="terminal-branch"><i class="fa-solid fa-code-branch"></i> main</div>
+        </div>
+        <div class="terminal-body">
+          <span class="code-cmt">// developer.ts</span><br>
+          <span class="code-kw">const</span> dev = {<br>
+          &nbsp;&nbsp;name: <span class="code-str">'Vikas Shukla'</span>,<br>
+          &nbsp;&nbsp;stack: [<span class="code-str">'React'</span>, <span class="code-str">'Node.js'</span>, <span class="code-str">'AWS'</span>, <span class="code-str">'C++ (OOSD)'</span>, <span class="code-str">'Python'</span>],<br>
+          &nbsp;&nbsp;badge: <span class="code-str">'CodeChef Gold Badge (500+ Solved)'</span>,<br>
+          &nbsp;&nbsp;edu: <span class="code-str">'ABES Institute of Technology'</span>,<br>
+          &nbsp;&nbsp;coffee: <span class="code-bool">true</span>,<br>
+          &nbsp;&nbsp;building: <span class="code-str">'scalable cloud & full-stack apps'</span><br>
+          };<br><br>
+          <span class="code-cmt">// say hi 👋</span><br>
+          <span id="terminal-command"></span><span class="code-cursor"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Tech Stack Marquee Ticker -->
+  <div class="marquee-container">
+    <div class="marquee-content">
+      <!-- Item list duplicated for infinite scroll -->
+      <div class="marquee-item"><img src="static/images/icons/html.png" alt="HTML"> HTML</div>
+      <div class="marquee-item"><img src="static/images/icons/css.png" alt="CSS"> CSS</div>
+      <div class="marquee-item"><img src="static/images/icons/JavaScript.png" alt="JavaScript"> JavaScript</div>
+      <div class="marquee-item"><img src="static/images/icons/react.png" alt="React"> React</div>
+      <div class="marquee-item"><img src="static/images/icons/node.png" alt="Node"> Node.js</div>
+      <div class="marquee-item"><img src="static/images/icons/express.svg" alt="Express"> Express</div>
+      <div class="marquee-item"><img src="static/images/icons/mongodb.png" alt="MongoDB"> MongoDB</div>
+      <div class="marquee-item"><img src="static/images/icons/sql.png" alt="SQL"> SQL</div>
+      <div class="marquee-item"><img src="static/images/icons/typescript.svg" alt="TypeScript"> TypeScript</div>
+      <div class="marquee-item"><img src="static/images/icons/tailwind.svg" alt="Tailwind"> Tailwind</div>
+      <div class="marquee-item"><img src="static/images/icons/python.png" alt="Python"> Python</div>
+      <div class="marquee-item"><img src="static/images/icons/java.png" alt="Java"> Java</div>
+      <div class="marquee-item"><img src="static/images/icons/git.svg" alt="Git"> Git</div>
+      <div class="marquee-item"><img src="static/images/icons/dsa.png" alt="DSA"> DSA</div>
+
+      <!-- Duplicate for looping -->
+      <div class="marquee-item"><img src="static/images/icons/html.png" alt="HTML"> HTML</div>
+      <div class="marquee-item"><img src="static/images/icons/css.png" alt="CSS"> CSS</div>
+      <div class="marquee-item"><img src="static/images/icons/JavaScript.png" alt="JavaScript"> JavaScript</div>
+      <div class="marquee-item"><img src="static/images/icons/react.png" alt="React"> React</div>
+      <div class="marquee-item"><img src="static/images/icons/node.png" alt="Node"> Node.js</div>
+      <div class="marquee-item"><img src="static/images/icons/express.svg" alt="Express"> Express</div>
+      <div class="marquee-item"><img src="static/images/icons/mongodb.png" alt="MongoDB"> MongoDB</div>
+      <div class="marquee-item"><img src="static/images/icons/sql.png" alt="SQL"> SQL</div>
+      <div class="marquee-item"><img src="static/images/icons/typescript.svg" alt="TypeScript"> TypeScript</div>
+      <div class="marquee-item"><img src="static/images/icons/tailwind.svg" alt="Tailwind"> Tailwind</div>
+      <div class="marquee-item"><img src="static/images/icons/python.png" alt="Python"> Python</div>
+      <div class="marquee-item"><img src="static/images/icons/java.png" alt="Java"> Java</div>
+      <div class="marquee-item"><img src="static/images/icons/git.svg" alt="Git"> Git</div>
+      <div class="marquee-item"><img src="static/images/icons/dsa.png" alt="DSA"> DSA</div>
+    </div>
+  </div>
+
+  <!-- ================= SECTION 3: ABOUT SECTION ================= -->
+  <section class="section-container animate-on-scroll" id="about">
+    <div class="neo-badge yellow">● ABOUT</div>
+    <h2 class="section-title">A Builder Grounded In Curiosity</h2>
+    
+    <div class="about-grid">
+      <div class="photo-frame-clean">
+        <img src="static/images/vikas.jpg?v=3" alt="Vikas Shukla" class="about-avatar-img">
+      </div>
+
+      <div class="bio-card">
+        <p>
+          Final-year B.Tech Computer Science student at ABES Institute of Technology (ABESIT), Ghaziabad, passionate about Full-Stack Development, AWS Solutions Architecture, Object-Oriented Software Design (C++), and Data Structures & Algorithms.
+        </p>
+        <p>
+          I enjoy building scalable, user-focused applications with clean, efficient code while continuously expanding my technical skills. Solved 500+ problems on CodeChef (Problem Solver Gold Badge) and actively participate in hackathons to create practical solutions that make an impact.
+        </p>
+        
+        <hr class="bio-divider">
+
+        <div class="bio-stats">
+          <div class="bio-stat-item">
+            <div class="label">Education</div>
+            <div class="val">B.Tech CSE (ABESIT)</div>
+          </div>
+          <div class="bio-stat-item">
+            <div class="label">Graduation</div>
+            <div class="val">2027</div>
+          </div>
+          <div class="bio-stat-item">
+            <div class="label">Based In</div>
+            <div class="val">Ghaziabad, India</div>
+          </div>
+        </div>
+
+        <div class="bio-pills">
+          <span class="neo-badge yellow">&lt;/&gt; Full-Stack</span>
+          <span class="neo-badge cyan">☁️ AWS / Cloud</span>
+          <span class="neo-badge pink">🏅 500+ Solved on CodeChef</span>
+          <span class="neo-badge yellow">🚀 QubitX 2025 Hackathon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 4: SKILLS SECTION ================= -->
+  <section class="section-container animate-on-scroll" id="skills">
+    <div class="neo-badge pink">● STACK.JSON</div>
+    <h2 class="section-title">The Toolkit I Build With</h2>
+    <p class="section-subtitle">A curated summary of programming languages, full-stack frameworks, cloud platforms, and engineering tools I work with.</p>
+
+    <div class="skills-grid">
+      <!-- Card 1: Languages -->
+      <div class="skill-card">
+        <div class="skill-card-header yellow">
+          <i class="fa-solid fa-code"></i> LANGUAGES
+        </div>
+        <div class="skill-card-body">
+          <div class="skill-pill"><i class="fa-solid fa-code"></i> C++ (OOSD & DSA)</div>
+          <div class="skill-pill"><img src="static/images/icons/JavaScript.png" alt="JavaScript"> JavaScript</div>
+          <div class="skill-pill"><img src="static/images/icons/typescript.svg" alt="TypeScript"> TypeScript</div>
+          <div class="skill-pill"><img src="static/images/icons/python.png" alt="Python"> Python</div>
+          <div class="skill-pill"><img src="static/images/icons/java.png" alt="Java"> Java (Basics)</div>
+          <div class="skill-pill"><img src="static/images/icons/sql.png" alt="SQL"> SQL</div>
+          <div class="skill-pill"><img src="static/images/icons/html.png" alt="HTML"> HTML5</div>
+          <div class="skill-pill"><img src="static/images/icons/css.png" alt="CSS"> CSS3</div>
+        </div>
+      </div>
+
+      <!-- Card 2: Frameworks & Web -->
+      <div class="skill-card">
+        <div class="skill-card-header cyan">
+          <i class="fa-solid fa-layer-group"></i> FRONTEND & BACKEND
+        </div>
+        <div class="skill-card-body">
+          <div class="skill-pill"><img src="static/images/icons/react.png" alt="React"> React.js</div>
+          <div class="skill-pill"><img src="static/images/icons/node.png" alt="Node"> Node.js</div>
+          <div class="skill-pill"><img src="static/images/icons/express.svg" alt="Express"> Express.js</div>
+          <div class="skill-pill"><img src="static/images/icons/tailwind.svg" alt="Tailwind"> Tailwind CSS</div>
+          <div class="skill-pill"><i class="fa-solid fa-network-wired"></i> REST APIs</div>
+        </div>
+      </div>
+
+      <!-- Card 3: Cloud & DevOps -->
+      <div class="skill-card">
+        <div class="skill-card-header pink">
+          <i class="fa-solid fa-cloud"></i> CLOUD & DEVOPS
+        </div>
+        <div class="skill-card-body">
+          <div class="skill-pill"><i class="fa-brands fa-aws"></i> AWS EC2 / S3 / IAM / VPC</div>
+          <div class="skill-pill"><i class="fa-brands fa-docker"></i> Docker</div>
+          <div class="skill-pill"><img src="static/images/icons/git.svg" alt="Git"> Git & GitHub</div>
+          <div class="skill-pill"><i class="fa-solid fa-gears"></i> CI/CD & GitHub Actions</div>
+        </div>
+      </div>
+
+      <!-- Card 4: Databases & Networking -->
+      <div class="skill-card">
+        <div class="skill-card-header yellow">
+          <i class="fa-solid fa-database"></i> DATABASES & OS
+        </div>
+        <div class="skill-card-body">
+          <div class="skill-pill"><img src="static/images/icons/mongodb.png" alt="MongoDB"> MongoDB</div>
+          <div class="skill-pill"><img src="static/images/icons/sql.png" alt="PostgreSQL"> PostgreSQL</div>
+          <div class="skill-pill"><i class="fa-solid fa-server"></i> Computer Networking (TCP/IP, DNS)</div>
+          <div class="skill-pill"><i class="fa-brands fa-linux"></i> Linux & Shell/Bash</div>
+        </div>
+      </div>
+
+      <!-- Card 5: Soft Skills -->
+      <div class="skill-card" style="grid-column: span 2;">
+        <div class="skill-card-header cyan">
+          <i class="fa-solid fa-star"></i> PROFESSIONAL EXCELLENCE
+        </div>
+        <div class="skill-card-body">
+          <div class="skill-pill"><img src="static/images/icons/problem-solving.svg" alt="Problem Solving"> Problem Solving & DSA (500+ Solved)</div>
+          <div class="skill-pill"><img src="static/images/icons/leadership.svg" alt="Leadership"> Object-Oriented Software Design (OOSD)</div>
+          <div class="skill-pill"><img src="static/images/icons/teamwork.svg" alt="Teamwork"> AWS Solutions Architecture</div>
+          <div class="skill-pill"><img src="static/images/icons/communication.svg" alt="Communication"> Hackathon Execution</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 5: PROJECTS SECTION ================= -->
+  <section class="section-container animate-on-scroll" id="projects">
+    <div class="neo-badge yellow">● FEATURED_WORK</div>
+    <h2 class="section-title">Projects That Ship & Solve Problems</h2>
+    <p class="section-subtitle">A collection of full-stack web applications and cloud architecture projects built with clean, scalable code.</p>
+
+    <div class="projects-grid">
+      <!-- Project 1: E-Commerce Website -->
+      <div class="project-card">
+        <div class="project-terminal-bar">
+          <div class="terminal-dots">
+            <span class="traffic-dot dot-red"></span>
+            <span class="traffic-dot dot-yellow"></span>
+            <span class="traffic-dot dot-green"></span>
+          </div>
+          <span>~/projects/e-commerce-website</span>
+          <span>⎇ main</span>
+        </div>
+        <div class="project-image-box">
+          <span class="neo-badge pink project-featured-badge">FEATURED</span>
+          <img src="static/images/projects/flowforge.png" alt="E-Commerce Website" class="project-image">
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">E-Commerce Website</h3>
+          <p class="project-desc">Designed and developed a fully functional e-commerce platform with secure user authentication (login/signup and encrypted password handling), advanced product search, shopping cart, and checkout functionality. Integrated Stripe and Razorpay payment gateways for secure transactions, order tracking, and built an admin dashboard for inventory management.</p>
+          <div class="project-tech">
+            <span class="project-tech-pill">React.js</span>
+            <span class="project-tech-pill">Node.js</span>
+            <span class="project-tech-pill">Express</span>
+            <span class="project-tech-pill">MongoDB</span>
+            <span class="project-tech-pill">Stripe / Razorpay</span>
+            <span class="project-tech-pill">Tailwind</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/vikasshukla950/ecommerce-project" target="_blank" class="neo-btn">GitHub Repo ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: Electronic Health Record (EHR) -->
+      <div class="project-card">
+        <div class="project-terminal-bar">
+          <div class="terminal-dots">
+            <span class="traffic-dot dot-red"></span>
+            <span class="traffic-dot dot-yellow"></span>
+            <span class="traffic-dot dot-green"></span>
+          </div>
+          <span>~/projects/electronic-health-record</span>
+          <span>⎇ main</span>
+        </div>
+        <div class="project-image-box">
+          <span class="neo-badge pink project-featured-badge">FEATURED</span>
+          <img src="static/images/projects/slate.png" alt="Electronic Health Record (EHR)" class="project-image">
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">Electronic Health Record (EHR)</h3>
+          <p class="project-desc">Developed a responsive Electronic Health Record (EHR) system focused on decentralized data ownership and secure healthcare data management. Solved key challenges in traditional healthcare systems including data security, ownership, and integrity with a scalable, user-friendly interface.</p>
+          <div class="project-tech">
+            <span class="project-tech-pill">React.js</span>
+            <span class="project-tech-pill">Node.js</span>
+            <span class="project-tech-pill">Express</span>
+            <span class="project-tech-pill">MongoDB</span>
+            <span class="project-tech-pill">Decentralized Security</span>
+            <span class="project-tech-pill">Tailwind</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/vikasshukla950/ETH" target="_blank" class="neo-btn">GitHub Repo ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: YouTube Clone (Frontend) -->
+      <div class="project-card">
+        <div class="project-terminal-bar">
+          <div class="terminal-dots">
+            <span class="traffic-dot dot-red"></span>
+            <span class="traffic-dot dot-yellow"></span>
+            <span class="traffic-dot dot-green"></span>
+          </div>
+          <span>~/projects/youtube-clone</span>
+          <span>⎇ main</span>
+        </div>
+        <div class="project-image-box">
+          <span class="neo-badge pink project-featured-badge">FEATURED</span>
+          <img src="static/images/projects/youtube_app.jpg" alt="YouTube Clone" class="project-image">
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">YouTube Clone (Frontend)</h3>
+          <p class="project-desc">Developed a dynamic video streaming web application using React integrated with the YouTube Data API to provide seamless video browsing and streaming functionality. Features video search, playback controls, and personalized content recommendations with React Hooks.</p>
+          <div class="project-tech">
+            <span class="project-tech-pill">React.js</span>
+            <span class="project-tech-pill">YouTube Data API</span>
+            <span class="project-tech-pill">React Hooks</span>
+            <span class="project-tech-pill">JavaScript</span>
+            <span class="project-tech-pill">CSS3</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/vikasshukla950" target="_blank" class="neo-btn">GitHub Repo ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 6: EXPERIENCE & EDUCATION SECTION ================= -->
+  <section class="section-container animate-on-scroll" id="experience">
+    <div class="neo-badge cyan">● EXPERIENCE & MILESTONES</div>
+    <h2 class="section-title">My Journey & Milestones</h2>
+    <p class="section-subtitle">Internship experience, academic path, competitive programming milestones, hackathons, and continuous skill building.</p>
+
+    <div class="timeline-container">
+      <div class="timeline-line"></div>
+
+      <!-- Timeline Item 0: Code-A-Nova Internship -->
+      <div class="timeline-item left cyan-date">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card-wrapper">
+          <div class="timeline-date-badge">📅 Aug 2026 — Nov 2026</div>
+          <div class="timeline-card">
+            <span class="neo-badge active-status">● Internship Experience</span>
+            <h3 class="role-title">Python Development Intern</h3>
+            <div class="org"><i class="fa-solid fa-briefcase"></i> Code-A-Nova · Remote</div>
+            <ul>
+              <li>Developing a CLI-based Python reporting tool using Pandas, NumPy, and Typer.</li>
+              <li>Building automated reports, data visualizations, and following pytest and Poetry software engineering best practices.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline Item 1: QubitX 2025 Hackathon -->
+      <div class="timeline-item right pink-date">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card-wrapper">
+          <div class="timeline-date-badge">📅 2025</div>
+          <div class="timeline-card">
+            <span class="neo-badge active-status">● Hackathon Participant</span>
+            <h3 class="role-title">QubitX 2025 — National Hackathon</h3>
+            <div class="org"><i class="fa-solid fa-trophy"></i> Team: CODE RED · GL Bajaj Group of Institutions, Mathura</div>
+            <ul>
+              <li>Participated in QubitX 2025 National Hackathon organized by GL Bajaj Group of Institutions in collaboration with HackWithIndia.</li>
+              <li>Collaborated with team members to build practical software solutions under strict time constraints.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline Item 2: CodeChef Problem Solver Gold Badge -->
+      <div class="timeline-item left yellow-date">
+        <div class="timeline-dot" style="background: var(--yellow);"></div>
+        <div class="timeline-card-wrapper">
+          <div class="timeline-date-badge">📅 Dec 2024 — 2025</div>
+          <div class="timeline-card">
+            <span class="neo-badge active-status">🏅 Gold Badge Solver</span>
+            <h3 class="role-title">CodeChef — 500+ Problems Solved</h3>
+            <div class="org"><i class="fa-solid fa-code"></i> CodeChef · Username: vikas091</div>
+            <ul>
+              <li>Achieved the <b>Problem Solver Gold Badge</b> on CodeChef by solving over 500 competitive programming and algorithmic challenges.</li>
+              <li>Completed <b>BCS301: Data Structures</b> certification (Cert ID: 59d6cd6).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline Item 3: B.Tech CSE -->
+      <div class="timeline-item right cyan-date">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card-wrapper">
+          <div class="timeline-date-badge">📅 2023 — 2027</div>
+          <div class="timeline-card">
+            <span class="neo-badge active-status">● B.Tech CSE</span>
+            <h3 class="role-title">Bachelor of Technology in Computer Science & Engineering</h3>
+            <div class="org"><i class="fa-solid fa-graduation-cap"></i> ABES Institute of Technology (ABESIT), Ghaziabad</div>
+            <ul>
+              <li>Final-year student specializing in Full-Stack Web Development, AWS Cloud Solutions Architecture, Object-Oriented Software Design (OOSD), and DSA.</li>
+              <li>Relevant Coursework: OOPs in C++, Database Management Systems (DBMS), Computer Networks (CN).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline Item 4: Class 12th PCM -->
+      <div class="timeline-item left yellow-date">
+        <div class="timeline-dot" style="background: var(--yellow);"></div>
+        <div class="timeline-card-wrapper">
+          <div class="timeline-date-badge">📅 2022</div>
+          <div class="timeline-card">
+            <h3 class="role-title">Class 12th — PCM</h3>
+            <div class="org"><i class="fa-solid fa-school"></i> Dehradun Public School, Ghaziabad</div>
+            <ul>
+              <li>Completed Senior Secondary Education with a focus on Physics, Chemistry, and Mathematics.</li>
+              <li>Built a strong base in Physics, Chemistry, and Mathematics with structural reasoning and logical problem solving.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline Item 5: Class 10th High School -->
+      <div class="timeline-item right pink-date">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card-wrapper">
+          <div class="timeline-date-badge">📅 2020</div>
+          <div class="timeline-card">
+            <h3 class="role-title">Class 10th — High School</h3>
+            <div class="org"><i class="fa-solid fa-school"></i> Bhagirath Public School, Ghaziabad</div>
+            <ul>
+              <li>Completed High School Education with strong academic performance in Science, Mathematics, and Computer Applications.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 6b: EDUCATION SECTION (Book Style) ================= -->
+  <section class="section-container animate-on-scroll" id="education">
+    <div class="neo-badge pink">● ACADEMICS</div>
+    <h2 class="section-title">Academic Archive</h2>
+    <p class="section-subtitle">An interactive notebook documenting my academic achievements and course milestones.</p>
+    
+    <div class="book-stage" id="bookStage">
+      <div class="book">
+        
+        <!-- COVER -->
+        <div class="cover front" onclick="toggleBook()">
+          <div class="cover-design">
+            <h4>ACADEMIC ARCHIVE</h4>
+            <h1>MY<br>EDUCATION</h1>
+            <span class="hint" id="hint">Click To Open</span>
+          </div>
+        </div>
+
+        <!-- PAGES -->
+        <div class="pages">
+          <div class="page-stack" id="pageStack">
+
+            <!-- PAGE 1: B.Tech -->
+            <div class="page active">
+              <div class="edu-card">
+                <i class="fa-solid fa-laptop-code edu-icon"></i>
+                <h3>2023 — 2027</h3>
+                <h2>B.Tech in Computer Science & Engineering</h2>
+                <h4>ABES Institute of Technology, Ghaziabad</h4>
+                <div class="divider"></div>
+                <p>
+                  Specializing in Full-Stack Web Engineering, AWS Solutions Architecture, OOSD C++, and Data Structures & Algorithms (DSA).
+                  Focused on building scalable applications with clean, efficient code.
+                </p>
+              </div>
+              <div class="page-nav">
+                <span></span>
+                <button class="neo-btn small-btn" onclick="nextPage()">Next →</button>
+              </div>
+            </div>
+
+            <!-- PAGE 2: Class 12th -->
+            <div class="page">
+              <div class="edu-card">
+                <i class="fa-solid fa-flask edu-icon"></i>
+                <h3>2022</h3>
+                <h2>Class 12th (PCM)</h2>
+                <h4>Dehradun Public School, Ghaziabad</h4>
+                <div class="divider"></div>
+                <p>
+                  Built a solid foundation in Physics, Chemistry, and Mathematics.
+                  Excelled in structural reasoning and logical problem solving.
+                </p>
+              </div>
+              <div class="page-nav">
+                <button class="neo-btn neo-btn-outline small-btn" onclick="prevPage()">← Prev</button>
+                <button class="neo-btn small-btn" onclick="nextPage()">Next →</button>
+              </div>
+            </div>
+
+            <!-- PAGE 3: Class 10th -->
+            <div class="page">
+              <div class="edu-card">
+                <i class="fa-solid fa-school edu-icon"></i>
+                <h3>2020</h3>
+                <h2>Class 10th (High School)</h2>
+                <h4>Bhagirath Public School, Ghaziabad</h4>
+                <div class="divider"></div>
+                <p>
+                  Completed High School with excellence in Mathematics, Science, and Computer Studies, developing an early passion for computing.
+                </p>
+              </div>
+              <div class="page-nav">
+                <button class="neo-btn neo-btn-outline small-btn" onclick="prevPage()">← Prev</button>
+                <button class="neo-btn small-btn" onclick="toggleBook()">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 7: AWARDS / ACHIEVEMENTS SECTION ================= -->
+  <section class="section-container animate-on-scroll" id="awards">
+    <div class="neo-badge yellow">● AWARDS & RECOGNITION</div>
+    <h2 class="section-title">Achievements & Badges</h2>
+    <p class="section-subtitle">Highlights of competitive programming, hackathon participation, and professional course certifications.</p>
+
+    <div class="achievements-list">
+      <!-- Achievement 1: CodeChef Gold Badge -->
+      <div class="achievement-card featured-finalist">
+        <div class="achievement-icon gold-glow"><i class="fa-solid fa-medal"></i></div>
+        <div class="achievement-info-block">
+          <div class="achievement-badge gold"><i class="fa-solid fa-crown"></i> Problem Solver Gold Badge</div>
+          <div class="achievement-title">500+ Problems Solved on CodeChef</div>
+          <div class="achievement-sub">Achieved Problem Solver Gold Badge on CodeChef (Username: vikas091)</div>
+        </div>
+      </div>
+
+      <!-- Achievement 2: QubitX 2025 -->
+      <div class="achievement-card featured-winner">
+        <div class="achievement-icon silver-glow"><i class="fa-solid fa-trophy"></i></div>
+        <div class="achievement-info-block">
+          <a href="https://drive.google.com/file/d/1Rx-1ny0kg7Koskzejn47UEpISgqeBRpz/view?usp=sharing" target="_blank" style="text-decoration: none;">
+            <div class="achievement-badge silver"><i class="fa-solid fa-award"></i> Hackathon Certificate ↗</div>
+          </a>
+          <div class="achievement-title">QubitX 2025 — National Hackathon</div>
+          <div class="achievement-sub">Team CODE RED · Organized by GL Bajaj Group of Institutions, Mathura</div>
+        </div>
+      </div>
+
+      <!-- Achievement 3: OOSD C++ & CodeChef Cert -->
+      <div class="achievement-card featured-credential">
+        <div class="achievement-icon teal-glow"><i class="fa-solid fa-code"></i></div>
+        <div class="achievement-info-block">
+          <div class="achievement-badge teal"><i class="fa-solid fa-shield-halved"></i> Data Structures Cert</div>
+          <div class="achievement-title">CodeChef BCS301 Data Structures & OOSD C++</div>
+          <div class="achievement-sub">Completed all lessons & projects in BCS301 Data Structures by CodeChef (Cert ID: 59d6cd6)</div>
+        </div>
+      </div>
+
+      <!-- Achievement 4: Infosys Springboard DBMS -->
+      <div class="achievement-card">
+        <div class="achievement-icon yellow"><i class="fa-solid fa-database"></i></div>
+        <div class="achievement-title">Infosys Springboard DBMS Part - 1 Certification (Oct 3, 2025)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 8: CERTIFICATES SECTION ================= -->
+  <section class="section-container animate-on-scroll" id="certificates">
+    <div class="neo-badge pink">● CREDENTIALS</div>
+    <h2 class="section-title">Certificates & Verification</h2>
+    <p class="section-subtitle">Professional credentials validating my skills in Competitive Programming, Data Structures, OOSD C++, and Cloud Architecture.</p>
+
+    <div class="certs-grid">
+      <!-- Cert 1: CodeChef BCS301 Data Structures -->
+      <div class="cert-card">
+        <div class="cert-image-box">
+          <img src="static/images/certs/vikas_codechef.jpg" alt="Data Structures - CodeChef">
+        </div>
+        <div class="cert-body">
+          <h3 class="cert-title">BCS301: Data Structures</h3>
+          <div class="cert-platform">CodeChef / Pro Certificate (ID: 59d6cd6)</div>
+          <div class="cert-date">Dec 27, 2024</div>
+          <a href="https://www.codechef.com/certificates/public/59d6cd6" target="_blank" class="cert-btn">Verify Certificate ↗</a>
+        </div>
+      </div>
+
+      <!-- Cert 2: Infosys Springboard DBMS -->
+      <div class="cert-card">
+        <div class="cert-image-box">
+          <img src="static/images/certs/vikas_dbms.jpg" alt="Database Management System Part - 1">
+        </div>
+        <div class="cert-body">
+          <h3 class="cert-title">Database Management System Part - 1</h3>
+          <div class="cert-platform">Infosys Springboard</div>
+          <div class="cert-date">Oct 3, 2025</div>
+          <a href="https://verify.onwingspan.com" target="_blank" class="cert-btn">Verify Certificate ↗</a>
+        </div>
+      </div>
+
+      <!-- Cert 3: OOSD C++ Programming -->
+      <div class="cert-card">
+        <div class="cert-image-box">
+          <img src="static/images/certs/vikas_oosd.jpg" alt="OOSD C++ Programming">
+        </div>
+        <div class="cert-body">
+          <h3 class="cert-title">OOSD C++ Programming Certification</h3>
+          <div class="cert-platform">Object-Oriented Software Design</div>
+          <div class="cert-date">2025</div>
+          <a href="https://drive.google.com/file/d/1Rx-1ny0kg7Koskzejn47UEpISgqeBRpz/view?usp=sharing" target="_blank" class="cert-btn">Verify Certificate ↗</a>
+        </div>
+      </div>
+
+      <!-- Cert 4: QubitX 2025 Hackathon -->
+      <div class="cert-card">
+        <div class="cert-image-box">
+          <img src="static/images/certs/vikas_qubitx.jpg" alt="QubitX 2025 National Hackathon">
+        </div>
+        <div class="cert-body">
+          <h3 class="cert-title">QubitX 2025 — National Hackathon</h3>
+          <div class="cert-platform">GL Bajaj Group of Institutions / HackWithIndia</div>
+          <div class="cert-date">2025</div>
+          <a href="https://drive.google.com/file/d/1Rx-1ny0kg7Koskzejn47UEpISgqeBRpz/view?usp=sharing" target="_blank" class="cert-btn">Verify Certificate ↗</a>
+        </div>
+      </div>
+
+      <!-- Cert 5: AWS Academy -->
+      <div class="cert-card">
+        <div class="cert-image-box">
+          <img src="static/images/certs/vikas_aws_academy.jpg" alt="AWS Academy - Amazon">
+        </div>
+        <div class="cert-body">
+          <h3 class="cert-title">AWS Academy</h3>
+          <div class="cert-platform">Amazon Web Services</div>
+          <div class="cert-date">2026</div>
+          <a href="#" target="_blank" class="cert-btn">Verified Certificate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 9: CONTACT SECTION ================= -->
+  <section class="section-container animate-on-scroll" id="contact">
+    <div class="neo-badge cyan">● CONTACT</div>
+    <h2 class="section-title">Let's Build Something Great</h2>
+    <p class="section-subtitle">Got a project, a role, or just want to connect? Drop a message — I read every response.</p>
+
+    <div class="contact-grid">
+      <!-- Left Box -->
+      <div class="contact-card-left">
+        <h3>Reach out directly</h3>
+        <p>Open to Full-Stack Developer roles, AWS Cloud internships, freelance projects, and competitive programming discussions.</p>
+        
+        <a href="mailto:vikasshukla8383@gmail.com" class="contact-link">
+          <div class="contact-link-icon yellow"><i class="fa-solid fa-envelope"></i></div>
+          <div class="contact-link-details">
+            <span class="contact-link-label">Email</span>
+            <span class="contact-link-value">vikasshukla8383@gmail.com</span>
+          </div>
+        </a>
+
+        <a href="tel:+919695061740" class="contact-link">
+          <div class="contact-link-icon cyan"><i class="fa-solid fa-phone"></i></div>
+          <div class="contact-link-details">
+            <span class="contact-link-label">Phone</span>
+            <span class="contact-link-value">+91 9695061740</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/vikasshukla950" target="_blank" class="contact-link">
+          <div class="contact-link-icon pink"><i class="fa-brands fa-github"></i></div>
+          <div class="contact-link-details">
+            <span class="contact-link-label">GitHub</span>
+            <span class="contact-link-value">@vikasshukla950</span>
+          </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/vikas-shukla-b15992228" target="_blank" class="contact-link">
+          <div class="contact-link-icon yellow"><i class="fa-brands fa-linkedin"></i></div>
+          <div class="contact-link-details">
+            <span class="contact-link-label">LinkedIn</span>
+            <span class="contact-link-value">in/vikas-shukla-b15992228</span>
+          </div>
+        </a>
+
+        <a href="https://x.com/vikas_shukla07" target="_blank" class="contact-link">
+          <div class="contact-link-icon cyan"><i class="fa-brands fa-x-twitter"></i></div>
+          <div class="contact-link-details">
+            <span class="contact-link-label">X (Twitter)</span>
+            <span class="contact-link-value">@vikas_shukla07</span>
+          </div>
+        </a>
+
+        <a href="https://www.codechef.com/users/vikas091" target="_blank" class="contact-link">
+          <div class="contact-link-icon pink"><i class="fa-solid fa-code"></i></div>
+          <div class="contact-link-details">
+            <span class="contact-link-label">CodeChef</span>
+            <span class="contact-link-value">@vikas091 (500+ Solved)</span>
+          </div>
+        </a>
+
+        <a href="https://leetcode.com/u/vikas091/" target="_blank" class="contact-link">
+          <div class="contact-link-icon yellow"><i class="fa-solid fa-code"></i></div>
+          <div class="contact-link-details">
+            <span class="contact-link-label">LeetCode</span>
+            <span class="contact-link-value">@vikas091</span>
+          </div>
+        </a>
+
+        <a href="https://www.hackerrank.com/profile/vickyshukla9695" target="_blank" class="contact-link">
+          <div class="contact-link-icon cyan"><i class="fa-brands fa-hackerrank"></i></div>
+          <div class="contact-link-details">
+            <span class="contact-link-label">HackerRank</span>
+            <span class="contact-link-value">@vickyshukla9695</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Right Box -->
+      <div class="contact-card-right">
+        <form id="contactForm" onsubmit="handleFormSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="Vikas Shukla" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="_subject" class="form-input" placeholder="Project collaboration..." required>
+          </div>
+          <div class="form-group">
+            <label for="message">Your message</label>
+            <textarea id="message" name="message" class="form-textarea" placeholder="Hi Vikas, I'd like to talk about..." required></textarea>
+          </div>
+          <button type="submit" id="submitBtn" class="submit-btn">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 10: FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="footer-name">Vikas <span>Shukla</span></div>
+    <p class="footer-copy">Built by Vikas Shukla · © 2026 · Designed & developed with care.</p>
+    
+    <div class="footer-socials">
+      <a href="https://github.com/vikasshukla950" target="_blank" class="footer-social-btn" aria-label="GitHub">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/vikas-shukla-b15992228" target="_blank" class="footer-social-btn" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="https://x.com/vikas_shukla07" target="_blank" class="footer-social-btn" aria-label="X (Twitter)">
+        <i class="fa-brands fa-x-twitter"></i>
+      </a>
+      <a href="https://www.codechef.com/users/vikas091" target="_blank" class="footer-social-btn" aria-label="CodeChef">
+        <i class="fa-solid fa-code"></i>
+      </a>
+      <a href="mailto:vikasshukla8383@gmail.com" class="footer-social-btn" aria-label="Email">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+    </div>
+
+    <!-- Scroll-to-Top Button -->
+    <button class="scroll-top-btn" id="scrollTopBtn" onclick="scrollToTop()" aria-label="Scroll to Top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+  </footer>
+
+  <!-- YouTube Video Modal Player -->
+  <div id="videoModal" class="video-modal">
+    <div class="video-box">
+      <button class="video-close-btn" onclick="closeVideo()">&times;</button>
+      <iframe id="videoIframe" width="100%" height="100%" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    /* ==========================================================
+       1. MOBILE MENU TOGGLE
+       ========================================================== */
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('show');
+    }
+
+    /* Close menu when a link is clicked */
+    document.querySelectorAll('.nav-center a').forEach(link => {
+      link.addEventListener('click', () => {
+        const navLinks = document.getElementById('navLinks');
+        navLinks.classList.remove('show');
+      });
+    });
+
+    /* ==========================================================
+       2. SCROLL TO TOP TRIGGER
+       ========================================================== */
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    /* ==========================================================
+       3. SCROLL REVEAL ANIMATIONS
+       ========================================================== */
+    const revealElements = document.querySelectorAll('.animate-on-scroll');
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.05
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    /* ==========================================================
+       4. TERMINAL TYPING CURSOR SIMULATION
+       ========================================================== */
+    const commandText = "vikas.init()";
+    const terminalCommand = document.getElementById('terminal-command');
+    let charIndex = 0;
+
+    function typeTerminalCommand() {
+      if (charIndex < commandText.length) {
+        terminalCommand.textContent += commandText.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeTerminalCommand, 130);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(typeTerminalCommand, 1000);
+    });
+
+    /* ==========================================================
+       5. YOUTUBE VIDEO MODAL CONTROLLER
+       ========================================================== */
+    const videoModal = document.getElementById('videoModal');
+    const videoIframe = document.getElementById('videoIframe');
+
+    function openVideo(url) {
+      let embedUrl = url;
+      if (url.includes('youtube.com/watch?v=')) {
+        const videoId = url.split('v=')[1].split('&')[0];
+        embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      } else if (url.includes('youtu.be/')) {
+        const videoId = url.split('youtu.be/')[1].split('?')[0];
+        embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      } else if (!url.includes('embed') && !url.startsWith('http')) {
+        embedUrl = `https://www.youtube.com/embed/${url}?autoplay=1`;
+      }
+      
+      videoIframe.src = embedUrl;
+      videoModal.classList.add('show');
+    }
+
+    function closeVideo() {
+      videoIframe.src = "";
+      videoModal.classList.remove('show');
+    }
+
+    window.addEventListener('click', (e) => {
+      if (e.target === videoModal) {
+        closeVideo();
+      }
+    });
+
+    /* ==========================================================
+       6. FORM SUBMISSION HANDLER
+       ========================================================== */
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const submitBtn = document.getElementById('submitBtn');
+      const originalBtnHtml = submitBtn.innerHTML;
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Sending...`;
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+
+      fetch("https://formsubmit.co/ajax/vikasshukla8383@gmail.com", {
+        method: "POST",
+        headers: { 
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            name: name,
+            email: email,
+            _subject: subject,
+            message: message
+        })
+      })
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error("Network response was not ok.");
+      })
+      .then(data => {
+        alert("Thank you! Your message has been sent directly to Vikas.");
+        document.getElementById('contactForm').reset();
+      })
+      .catch(error => {
+        console.error("Form transmission error:", error);
+        alert("Oops! There was an issue sending your message. Please try again or email directly.");
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+      });
+    }
+
+    /* ==========================================================
+       7. THEME TRANSITION CONTROLLER
+       ========================================================== */
+    function changeTheme(themeName) {
+      document.documentElement.setAttribute('data-theme', themeName);
+      localStorage.setItem('vikas-portfolio-theme', themeName);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('vikas-portfolio-theme') || 'light';
+      const finalTheme = (savedTheme === 'light' || savedTheme === 'dark') ? savedTheme : 'light';
+      document.documentElement.setAttribute('data-theme', finalTheme);
+      
+      const themeSelect = document.getElementById('themeSelect');
+      if (themeSelect) {
+        themeSelect.value = finalTheme;
+      }
+    });
+
+    /* ==========================================================
+       8. ACADEMIC ARCHIVE (BOOK) LOGIC
+       ========================================================== */
+    let isBookOpen = false;
+    let currentPage = 0;
+
+    const bookStage = document.getElementById("bookStage");
+    const bookHint = document.getElementById("hint");
+    const bookPages = document.querySelectorAll("#pageStack .page");
+
+    function toggleBook() {
+      isBookOpen = !isBookOpen;
+
+      if (isBookOpen) {
+        bookStage.classList.add("active");
+        if (bookHint) bookHint.style.display = "none";
+      } else {
+        bookStage.classList.remove("active");
+        if (bookHint) bookHint.style.display = "inline-block";
+
+        bookPages.forEach(page => {
+          page.classList.remove("flipped", "active");
+        });
+
+        bookPages[0].classList.add("active");
+        currentPage = 0;
+      }
+    }
+
+    function nextPage() {
+      if (currentPage < bookPages.length - 1) {
+        bookPages[currentPage].classList.add("flipped");
+        bookPages[currentPage].classList.remove("active");
+
+        currentPage++;
+        bookPages[currentPage].classList.add("active");
+      }
+    }
+
+    function prevPage() {
+      if (currentPage > 0) {
+        bookPages[currentPage].classList.remove("active");
+
+        currentPage--;
+        bookPages[currentPage].classList.remove("flipped");
+        bookPages[currentPage].classList.add("active");
+      }
+    }
+  </script>
+</body>
+
+</html>

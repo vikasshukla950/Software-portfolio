@@ -1,0 +1,16 @@
+# Large Media
+static/videos/
+
+# IDE settings
+.vscode/
+
+# Build artifacts and dependencies
+node_modules/
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+.vercel
